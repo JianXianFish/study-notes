@@ -1,7 +1,7 @@
 const sidebar = require('./router/index')
 module.exports = {
-    title: '🐟 𝗠𝗿𝗙𝗶𝘀𝗵',
-    description: '谢谢',
+    title: '🐟 𝗙𝗶𝘀𝗵 𝗖𝗼𝗱𝗲',
+    description: 'ℐ𝒻 𝓎ℴ𝓊 𝒶𝓁𝓌𝒶𝓎𝓈 𝒹ℯ𝓅ℯ𝓃𝒹 ℴ𝓃 ℴ𝓉𝒽ℯ𝓇𝓈, 𝓎ℴ𝓊 𝓌𝒾𝓁𝓁 𝓃ℯ𝓋ℯ𝓇 ℊ𝓇ℴ𝓌 𝓊𝓅.',
     theme: 'reco',
     themeConfig: {// 主题设置
         displayAllHeaders: true,

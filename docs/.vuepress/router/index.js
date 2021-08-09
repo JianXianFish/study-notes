@@ -2,18 +2,22 @@ module.exports = {//左侧列表
     '/study/': [
         {
             title: '学习',
+            path: '/study/'
+        },
+        {
+            title: '前端打包',
             children: [
                 {
-                    title: '测试1',
-                    path: 'test01'
+                    title: '介绍',
+                    path: 'pack/'
                 },
                 {
-                    title: '测试2',
-                    path: 'test02'
+                    title: 'webpack',
+                    path: 'pack/webpack'
                 },
                 {
-                    title: '测试3',
-                    path: 'test03'
+                    title: 'rollup',
+                    path: 'pack/rollup'
                 }
             ]
         }
