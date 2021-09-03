@@ -20,6 +20,19 @@ module.exports = {//左侧列表
                     path: 'pack/rollup'
                 }
             ]
+        },
+        {
+            title: 'js基础知识',
+            children: [
+                {
+                    title: '介绍',
+                    path: 'js/'
+                },
+                {
+                    title: 'call与apply的区别与作用',
+                    path: 'js/call&apply'
+                }
+            ]
         }
     ],
     '/interview/': [{
