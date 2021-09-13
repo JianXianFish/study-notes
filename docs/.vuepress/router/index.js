@@ -22,11 +22,15 @@ module.exports = {//左侧列表
             children: [
                 {
                     title: '介绍',
-                    path: 'js/'
+                    path: 'typescript/'
                 },
                 {
-                    title: 'call与apply的区别与作用',
-                    path: 'js/call&apply'
+                    title: '安装',
+                    path: 'typescript/install'
+                },
+                {
+                    title: '语法',
+                    path: 'typescript/grammar'
                 }
             ]
         },
