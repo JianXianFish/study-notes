@@ -5,6 +5,32 @@ module.exports = {//左侧列表
             path: '/study/'
         },
         {
+            title: 'js基础知识',
+            children: [
+                {
+                    title: '介绍',
+                    path: 'js/'
+                },
+                {
+                    title: 'call与apply的区别与作用',
+                    path: 'js/call&apply'
+                }
+            ]
+        },
+        {
+            title: 'typescript',
+            children: [
+                {
+                    title: '介绍',
+                    path: 'js/'
+                },
+                {
+                    title: 'call与apply的区别与作用',
+                    path: 'js/call&apply'
+                }
+            ]
+        },
+        {
             title: '前端打包',
             children: [
                 {
@@ -18,19 +44,6 @@ module.exports = {//左侧列表
                 {
                     title: 'rollup',
                     path: 'pack/rollup'
-                }
-            ]
-        },
-        {
-            title: 'js基础知识',
-            children: [
-                {
-                    title: '介绍',
-                    path: 'js/'
-                },
-                {
-                    title: 'call与apply的区别与作用',
-                    path: 'js/call&apply'
                 }
             ]
         }
