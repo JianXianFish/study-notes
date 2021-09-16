@@ -52,13 +52,23 @@ module.exports = {//左侧列表
             ]
         }
     ],
-    '/interview/': [{
-        title: '面试',
-        children: [
-            {
-                title: '测试4',
-                path: 'test01'
-            }
-        ]
-    }]
+    '/interview/': [
+        {
+            title: '介绍',
+            path: '/interview/'
+        },
+        {
+            title: '复习',
+            children: [
+                {
+                    title: '第一部分',
+                    path: '/interview/part/1'
+                },
+                {
+                    title: '第二部分',
+                    path: '/interview/part/2'
+                }
+            ]
+        }
+    ]
 }
