@@ -61,12 +61,42 @@ module.exports = {//左侧列表
             title: '复习',
             children: [
                 {
-                    title: '第一部分',
-                    path: '/interview/part/1'
+                    title: 'js基础知识',
+                    children: [
+                        {
+                            title: '前言',
+                            path: '/interview/part/js/'
+                        },
+                        {
+                            title: '第一部分',
+                            path: '/interview/part/js/1'
+                        },
+                        {
+                            title: '第二部分',
+                            path: '/interview/part/js/2'
+                        },
+                        {
+                            title: '第三部分',
+                            path: '/interview/part/js/3'
+                        },
+                        {
+                            title: '第四部分',
+                            path: '/interview/part/js/4'
+                        }
+                    ]
                 },
                 {
-                    title: '第二部分',
-                    path: '/interview/part/2'
+                    title: 'Web API',
+                    children: [
+                        {
+                            title: '前言',
+                            path: '/interview/part/webApi/'
+                        },
+                        {
+                            title: '第一部分',
+                            path: '/interview/part/webApi/1'
+                        }
+                    ]
                 }
             ]
         }
