@@ -95,6 +95,14 @@ module.exports = {//左侧列表
                         {
                             title: '第一部分',
                             path: '/interview/part/webApi/1'
+                        },
+                        {
+                            title: '第二部分',
+                            path: '/interview/part/webApi/2'
+                        },
+                        {
+                            title: '第三部分',
+                            path: '/interview/part/webApi/3'
                         }
                     ]
                 }
