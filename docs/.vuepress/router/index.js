@@ -93,16 +93,41 @@ module.exports = {//左侧列表
                             path: '/interview/part/webApi/'
                         },
                         {
-                            title: '第一部分',
+                            title: 'DOM操作',
                             path: '/interview/part/webApi/1'
                         },
                         {
-                            title: '第二部分',
+                            title: 'BOM操作',
                             path: '/interview/part/webApi/2'
                         },
                         {
-                            title: '第三部分',
+                            title: '事件',
                             path: '/interview/part/webApi/3'
+                        },
+                        {
+                            title: 'ajax',
+                            path: '/interview/part/webApi/4'
+                        },
+                        {
+                            title: '存储',
+                            path: '/interview/part/webApi/5'
+                        }
+                    ]
+                },
+                {
+                    title: '开发环境',
+                    children: [
+                        {
+                            title: '前言',
+                            path: '/interview/part/development/'
+                        },
+                        {
+                            title: '开发与调试',
+                            path: '/interview/part/development/1'
+                        },
+                        {
+                            title: 'webpack 和 babel',
+                            path: '/interview/part/development/2'
                         }
                     ]
                 }
