@@ -308,3 +308,413 @@ dd.appendChild(newDom)
 
 </details>
 <br />
+
+### **19.函数声明和函数表达式的区别？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* 函数声明：`function fn() {}`
+* 函数表达式：`const fn = function () {}`
+* 函数声明会在代码执行前预加载，而函数表达式不会，函数提升。
+
+</details>
+<br />
+
+### **20.new Object() 和 Object.create()的区别？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* {} 等同于 new Object(), 原型 Object.prototype
+* Object.create(null) 没有原型
+* Object.create({...}) 可指定原型
+
+</details>
+<br />
+
+### **21.关于this的场景题？**
+```javascript
+const User = {
+    count: 1,
+    getCount: function () {
+        return this.count
+    }
+}
+console.log(User.getCount()) // ?
+const func = User.getCount
+console.log(func()) // ?
+```
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+1
+undefined
+```
+
+</details>
+<br />
+
+### **22.关于作用域和自由变量的场景题？**
+```javascript
+let i 
+for(i = 1; i <= 3; i++) {
+    setTimeout(function() {
+        console.log(i)
+    }, 0)
+}
+```
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* 4 4 4
+
+</details>
+<br />
+
+### **23.判断字符串以字母开头，后面字母数字下划线，长度6~30？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* `const reg = /^[a-zA-Z]\w{5,29}$/`
+* [浅学习](https://www.runoob.com/regexp/regexp-syntax.html)
+* [深学习](https://deerchao.cn/tutorials/regex/regex.htm)
+
+```javascript
+// 邮政编码
+/\d{6}/
+// 小写英文字母
+/^[a-z]+$/
+
+// 英文字母
+/^[a-zA-Z]+$/
+
+// 日期格式 2021.09.25
+/^\d{4}-\d{1, 2}-\d{1,2}$/
+
+// 用户名
+/^[a-zA-Z]\w{5,17}$/
+
+// 简单的IP地址匹配
+/\d+\.\d+\.+\d+\.+\d+/
+
+```
+
+</details>
+<br />
+
+### **24.关于作用域和自由变量的场景题？**
+
+```javascript
+let a = 100
+function test() {
+    console.log(a)
+    a = 10
+    console.log(a)
+}
+test()
+console.log(a)
+```
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* 100 10 10
+
+</details>
+<br />
+
+### **25.手写字符串trim方法，保证浏览器兼容？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+if (!String.prototype.trim) {
+  String.prototype.trim = function () {
+    return this.replace(/^\s+/, '').replace(/\s+$/, '')
+  }
+}
+```
+
+</details>
+<br />
+
+### **26.如何获取多个数字中的最大值？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+function max() {
+    const muns = Array.prototype.slice.call(arguments)
+    let max = 0
+    muns.forEach(n => {
+        if (n > max) {
+            max = n
+        }
+    })
+    return max
+}
+// 或者直接用Math原型方法
+Math.max(10,90,20,79)
+```
+
+</details>
+<br />
+
+### **27.如何用JS实现继承？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* class 继承
+* prototype 继承
+
+</details>
+<br />
+
+### **28.如何捕获JS程序中的异常？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+try {
+    // todo
+} catch (error) {
+    console.error(error)
+} finally {
+  // tode
+}
+
+// 自动捕获
+window.onerror = function (message, source, lineNom, colNom, error) {
+    // 第一，对跨域的JS，如CDN的，不会有详细的报错信息
+    // 第二，对于压缩的JS，还要配合sourceMap反查到未压缩代码的行、列
+}
+```
+
+</details>
+<br />
+
+### **29.什么事JSON？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* json 是一种数据格式，本质是一段字符串
+* json 格式和js对象结构一致，对js语言更友好
+* window.JSON是一个全局对象： JSON.stringify / JSON.parse
+
+</details>
+<br />
+
+### **30.获取当前页面的url？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* 传统方式，查找`location.search`
+* 新API，`URLSearchParams`
+
+```javascript
+// 传统方式 - 1
+function query1(name) {
+    const search = location.search.substr(1)
+    // search: 'a=10&b=20&c=30'
+    const reg = new RegExp(`(^|&)${name}=([^&]*)(&|$)`, 'i')
+    const res = search.match(reg)
+    if (reg === null) {
+        return null
+    }
+    return res[2]
+}
+// 传统方式 - 2
+function query2(name) {
+    const search = location.search.substr(1)
+    // search: 'a=10&b=20&c=30'
+    const res = {}
+    search.split('&').forEach(str => {
+        const arr = str.split('=')
+        const key = arr[0]
+        const value = arr[1]
+        res[key] = value
+    })
+    return res[name]
+}
+
+// URLSearchParams - 需要做兼容处理
+function queryName (name) {
+    const search = location.search
+    const p = new URLSearchParams(search)
+    return p.get(name)
+}
+```
+
+</details>
+<br />
+
+### **30.将url参数解析为JS对象？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+// 方式1
+function queryToObject1() {
+    const search = location.search.substr(1)
+    // search: 'a=10&b=20&c=30'
+    const res = {}
+    search.split('&').forEach(str => {
+        const arr = str.split('=')
+        const key = arr[0]
+        const value = arr[1]
+        res[key] = value
+    })
+    return res
+}
+// 方式2
+function queryToObject2() {
+    const search = location.search.substr(1)
+    // search: 'a=10&b=20&c=30'
+    const res = {}
+    const pList = new URLSearchParams(search)
+    pList.forEach((value, key) => {
+        const arr = str.split('=')
+        res[key] = value
+    })
+    return res
+}
+```
+
+</details>
+<br />
+
+### **31.手写数组flatern，考虑多层级？**
+
+```javascript
+flat([1,3,[2,3,[3],2],3])
+// [1,3,2,3,3,2,3]
+```
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+function flat(arr) {
+  // 验证arr中，还有没有深层数组 [1,2,3, [4,5]]
+  const isDeep = arr.some(item => item instanceof Array)
+  if (!isDeep) {
+      return arr
+  }
+  const res = Array.prototype.concat.apply([], arr)
+  return flat(res)
+}
+```
+
+</details>
+<br />
+
+### **32.数组去重？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+```javascript
+// 传统方式
+function unique (arr) {
+    const res = []
+    arr.forEach(item => {
+        if (res.indexOf(item) < 0) {
+          item.push(item)
+        }
+    })
+    return res
+}
+
+// 使用 set
+function unique(arr) {
+    const set = new Set(arr)
+    // return [...set] 
+    return Array.from(set)
+}
+```
+
+</details>
+<br />
+
+### **33.手写深拷贝？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* `Object.assgin()`不是深拷贝
+```javascript
+function deepClone (obj = {}) {
+    // 判断一下是否是常量，如果是常量直接返回
+    if (typeof obj !== 'object' || obj == null) {
+        return obj
+    }
+    // 初始化数据结构类型 对象/数组
+    let result = {}
+    if (obj instanceof Array) result = []
+  
+    for(let key in obj) {
+        // 保证 key 是当前属性 而不是原型属性
+       if (obj.hasOwnProperty(key)) {
+            result[key] = deepClone(obj[key])
+       }   
+    }
+    
+    return result
+}
+```
+
+</details>
+<br />
+
+### **34.介绍一下 RAF requestAnimationFrame？**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* 要想动画流畅，更新频率要60帧/s，即16.67ms更新一次视图
+* setTimeout 要手动控制频率，而RAF浏览器会自动控制
+* 后台标签或隐藏iframe中，RAF会暂停，而setTimeout依然会执行
+
+</details>
+<br />
+
+### **35.前端性能如何优化？ 一般从哪几个方面考虑**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* 原则：多食用内存，缓存，减少计算、减少网络请求
+* 方向：加载页面，页面渲染，页面操作流畅度
+
+</details>
+<br />
