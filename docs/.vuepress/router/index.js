@@ -61,6 +61,27 @@ module.exports = {//左侧列表
             title: '复习',
             children: [
                 {
+                    title: 'css',
+                    children: [
+                        {
+                            title: '前言',
+                            path: '/interview/part/css/'
+                        },
+                        {
+                            title: '盒子模型',
+                            path: '/interview/part/css/1'
+                        },
+                        {
+                            title: '布局',
+                            path: '/interview/part/css/2'
+                        },
+                        {
+                            title: 'css预处理器',
+                            path: '/interview/part/css/3'
+                        }
+                    ]
+                },
+                {
                     title: 'js基础知识',
                     children: [
                         {

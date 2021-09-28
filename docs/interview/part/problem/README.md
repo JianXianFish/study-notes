@@ -461,7 +461,11 @@ if (!String.prototype.trim) {
 function max() {
     const muns = Array.prototype.slice.call(arguments)
     let max = 0
-    muns.forEach(n => {
+    muns.forEach((n, index) => {
+        if (index === 0) {
+          max = n
+          return false
+        }
         if (n > max) {
             max = n
         }
@@ -715,6 +719,21 @@ function deepClone (obj = {}) {
 
 * 原则：多食用内存，缓存，减少计算、减少网络请求
 * 方向：加载页面，页面渲染，页面操作流畅度
+
+</details>
+<br />
+
+### **36.JS排序**
+
+<details>
+
+<summary>点击查看答案</summary>
+
+* `Array.sort()`
+* `Array.reverse()`
+* 冒泡排序
+* 选择排序
+* 快速排序
 
 </details>
 <br />
