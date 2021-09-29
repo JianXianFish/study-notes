@@ -686,7 +686,7 @@ function deepClone (obj = {}) {
   
     for(let key in obj) {
         // 保证 key 是当前属性 而不是原型属性
-       if (obj.hasOwnProperty(key)) {
+       if (Object.hasOwnProperty.call(obj, key)) {
             result[key] = deepClone(obj[key])
        }   
     }
