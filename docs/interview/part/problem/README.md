@@ -516,7 +516,7 @@ window.onerror = function (message, source, lineNom, colNom, error) {
 </details>
 <br />
 
-### **29.什么事JSON？**
+### **29.什么是JSON？**
 
 <details>
 
