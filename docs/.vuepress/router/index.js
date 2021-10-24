@@ -182,6 +182,10 @@ module.exports = {//左侧列表
                     path: '/interview/part/problem/'
                 }
             ]
+        },
+        {
+            title: '总结',
+            path: '/interview/summary/summary'
         }
     ]
 }
