@@ -14,6 +14,10 @@ module.exports = {//左侧列表
                 {
                     title: 'call与apply的区别与作用',
                     path: 'js/call&apply'
+                },
+                {
+                    title: '宏任务和微任务',
+                    path: 'js/Macro&MicroTasks'
                 }
             ]
         },
