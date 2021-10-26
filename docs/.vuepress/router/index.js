@@ -39,6 +39,23 @@ module.exports = {//左侧列表
             ]
         },
         {
+            title: 'http',
+            children: [
+                {
+                    title: '介绍',
+                    path: 'http/'
+                },
+                {
+                    title: '从输入url到回车后发生了什么',
+                    path: 'http/urlToEnter'
+                },
+                {
+                    title: 'HTTP缓存',
+                    path: 'http/cache'
+                }
+            ]
+        },
+        {
             title: '前端打包',
             children: [
                 {
