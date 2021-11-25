@@ -22,6 +22,19 @@ module.exports = {//左侧列表
             ]
         },
         {
+            title: 'vue',
+            children: [
+                {
+                    title: '介绍',
+                    path: 'vue/'
+                },
+                {
+                    title: '性能优化',
+                    path: 'vue/optimize'
+                }
+            ]
+        },
+        {
             title: 'typescript',
             children: [
                 {
@@ -72,6 +85,7 @@ module.exports = {//左侧列表
                 }
             ]
         }
+
     ],
     '/interview/': [
         {
