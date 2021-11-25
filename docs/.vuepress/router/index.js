@@ -76,6 +76,10 @@ module.exports = {//左侧列表
                     path: 'pack/'
                 },
                 {
+                    title: '模块化规范',
+                    path: 'pack/modularity'
+                },
+                {
                     title: 'webpack',
                     path: 'pack/webpack'
                 },
