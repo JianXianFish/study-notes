@@ -12,6 +12,10 @@ module.exports = {//左侧列表
                     path: 'js/'
                 },
                 {
+                    title: '设计模式',
+                    path: 'js/designPattern'
+                },
+                {
                     title: 'call与apply的区别与作用',
                     path: 'js/call&apply'
                 },
