@@ -233,3 +233,73 @@ eventCenter.emit('click', 2)
 * ***抽象工厂***
 
 **`优点`**：不暴露创建对象的具体逻辑，而是将将逻辑封装在一个函数中
+
+* ### **3.1 简单工厂模式**
+> 创建单一对象，需要的类比较少
+```javascript
+let UserFactory = function (role) {
+  function SuperAdmin() {
+    this.name = '超级管理员',
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据', '权限管理']
+  }
+  function Admin() {
+    this.name = '管理员',
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据']
+  }
+  function NormalUser() {
+    this.name = '普通用户',
+    this.viewPage = ['首页', '通讯录', '发现页']
+  }
+
+  switch (role) {
+    case 'superAdmin':
+      return new SuperAdmin();
+      break;
+    case 'admin':
+      return new Admin();
+      break;
+    case 'user':
+      return new NormalUser();
+      break;
+    default:
+      throw new Error('参数错误, 可选参数:superAdmin、admin、user');
+  }
+}
+const superAdmin = UserFactory('superAdmin')
+```
+
+* ### **3.2 工厂方法模式**
+> 创建多类对象，需要的类比较多
+
+```javascript
+//安全模式创建的工厂方法函数
+let UserFactory = function(role) {
+  if(this instanceof UserFactory) {
+    var s = new this[role]();
+    return s;
+  } else {
+    return new UserFactory(role);
+  }
+}
+
+//工厂方法函数的原型中设置所有对象的构造函数
+UserFactory.prototype = {
+  SuperAdmin: function() {
+    this.name = '超级管理员',
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据', '权限管理']
+  },
+  Admin: function() {
+    this.name = '管理员',
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据']
+  },
+  NormalUser: function() {
+    this.name = '普通用户',
+    this.viewPage = ['首页', '通讯录', '发现页']
+  }
+}
+
+//调用
+let superAdmin = UserFactory('SuperAdmin');
+let admin = UserFactory('Admin') 
+let normalUser = UserFactory('NormalUser')
+```

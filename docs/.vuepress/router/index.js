@@ -35,6 +35,23 @@ module.exports = {//左侧列表
                 {
                     title: '性能优化',
                     path: 'vue/optimize'
+                },
+                {
+                    title: '+Typescript 开发',
+                    children: [
+                        {
+                            title: '+Typescript 开发',
+                            path: 'vue/withTypescript/'
+                        },
+                        {
+                            title: 'vue-class-component',
+                            path: 'vue/withTypescript/vueClassComponent'
+                        },
+                        {
+                            title: 'vue-property-decorator',
+                            path: 'vue/withTypescript/vuePropertyDecorator'
+                        }
+                    ]
                 }
             ]
         },
