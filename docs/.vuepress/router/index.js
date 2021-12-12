@@ -37,10 +37,10 @@ module.exports = {//左侧列表
                     path: 'vue/optimize'
                 },
                 {
-                    title: '+Typescript 开发',
+                    title: 'Vue + Typescript 开发',
                     children: [
                         {
-                            title: '+Typescript 开发',
+                            title: '介绍',
                             path: 'vue/withTypescript/'
                         },
                         {

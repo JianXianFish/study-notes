@@ -1,4 +1,3 @@
 ---
-title: 学习
+title: vue + typescript 环境
 ---
-> 目的是啥

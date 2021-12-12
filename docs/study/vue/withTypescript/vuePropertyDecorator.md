@@ -1,5 +1,5 @@
 ---
-title: +Typescript 开发
+title: vue-property-decorator
 ---
 > `vue-property-decorator`完全依赖于
 > [`vue-class-component`](/study/vue/withTypescript/vueClassComponent)
